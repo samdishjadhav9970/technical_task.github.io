@@ -1,0 +1,44 @@
+<div style=" padding: 0;" class="container-fluid">
+    
+  
+    <br><br>
+    <div style="margin-top: 0px;" class="position-absolute  start-50 translate-middle">
+      <a href="#" routerLink="/product/create/" class="btn btn-outline-success btn-warning">Add New Product</a>
+    </div><br><br>
+    
+    <table class="table table-bordered border-dark">
+      <thead>   
+      <tr style="margin: 10px;">
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>category</th>
+        <th>Price</th>
+        <th> Image</th>
+
+
+        <th  width="250px">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products" >
+        <td>{{ product.id }}</td>
+        <td>{{ product.title }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.price }}</td>
+        <td ><img src={{product.image}} width="90px" alt="Image Not available"></td>
+
+
+        <td>
+          <a href="#" [routerLink]="['/product/', product.id, 'details']" style="margin:4px;" class="btn btn-info">View</a>
+          <a href="#" [routerLink]="['/product/', product.id, 'update']" style="margin:4px;" class="btn btn-outline-primary">Edit</a>
+          <button type="button" (click)="deleteProduct(product.id)" style="margin:4px;" class="btn btn-warning">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+
+      
+
+    </table>
+ </div>

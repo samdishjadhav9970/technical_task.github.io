@@ -1,0 +1,109 @@
+<div class="container">
+    <h1>Update Product</h1>
+  
+    <a href="#" routerLink="/product/index" class="btn btn-primary">Back</a>
+        
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="form-group">
+            <label for="id">product Id:</label>
+            <input 
+                formControlName="id"
+                id="id" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.id.touched && f.id.invalid" class="alert alert-danger">
+                <div *ngIf="f.id.errors?.required">id is required.</div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="title">title:</label>
+            <input 
+                formControlName="title"
+                id="title" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.title.touched && f.title.invalid" class="alert alert-danger">
+                <div *ngIf="f.title.errors?.required">title is required.</div>
+            </div>
+        </div>
+  
+        <div class="form-group">
+            <label for="description">description</label>
+            <textarea 
+                formControlName="description"
+                id="description" 
+                type="text" 
+                class="form-control">
+            </textarea>
+            <div *ngIf="f.description.touched && f.description.invalid" class="alert alert-danger">
+                <div *ngIf="f.description.errors?.required">description is required.</div>
+            </div>
+        </div>
+
+        <!-- <div class="form-group">
+            <label for="productCode">productCode:</label>
+            <input 
+                formControlName="productCode"
+                id="productCode" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.productCode.touched && f.productCode.invalid" class="alert alert-danger">
+                <div *ngIf="f.productCode.errors?.required">productCode is required.</div>
+            </div>
+        </div> -->
+
+        <div class="form-group">
+            <label for="category">category:</label>
+            <input 
+                formControlName="category"
+                id="category" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.category.touched && f.category.invalid" class="alert alert-danger">
+                <div *ngIf="f.category.errors?.required">category is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="price">price:</label>
+            <input 
+                formControlName="price"
+                id="price" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.price.touched && f.price.invalid" class="alert alert-danger">
+                <div *ngIf="f.price.errors?.required">price is required.</div>
+            </div>
+        </div>
+
+        <!-- <div class="form-group">
+            <label for="starRating">starRating:</label>
+            <input 
+                formControlName="starRating"
+                id="starRating" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.starRating.touched && f.starRating.invalid" class="alert alert-danger">
+                <div *ngIf="f.starRating.errors?.required">starRating is required.</div>
+            </div>
+        </div> -->
+
+        <div class="form-group">
+            <label for="image">image:</label>
+            <input 
+                formControlName="image"
+                id="image" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f.image.touched && f.image.invalid" class="alert alert-danger">
+                <div *ngIf="f.image.errors?.required">image is required.</div>
+            </div>
+        </div>
+  
+        
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+    </form>
+</div>
