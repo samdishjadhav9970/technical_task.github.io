@@ -6,6 +6,7 @@ import { ProductHomeComponent } from './product-home/product-home.component';
 import { ProductUpdateComponent } from './product-update/product-update.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'product/index', pathMatch: 'full'},
   { path: 'product', redirectTo: 'product/index', pathMatch: 'full'},
   { path: 'product/index', component: ProductHomeComponent },
   { path: 'product/:id/details', component: ProductDetailsComponent },
