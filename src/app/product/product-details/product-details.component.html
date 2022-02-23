@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>View Product</h1>
+  
+    <a href="#" routerLink="/product/index" class="btn btn-primary">Back</a>
+
+
+    <table class="table table-bordered">
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>category</th>
+          <th>Price</th>
+          <th> Image</th>
+      </tr>
+        <tr>
+          <td>{{ product.id }}</td>
+          <td>{{ product.title }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.image | slice:0:30 }}</td>
+        </tr>
+      </table>
+
+    <div>
+         <img width="250px" style="justify-content: center;" src={{product.image}} alt="Image Not available">
+    </div>
+
+</div>
